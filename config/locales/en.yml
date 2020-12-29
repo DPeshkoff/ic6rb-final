@@ -1,0 +1,75 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  title_key: "BMSTU Timetable"
+  home_page_key: "Home"
+  add_timetable_key: "Timetables"
+  logged_as_text_key: "You are logged as: "
+  logout_key: "Logout"
+  login_key: "Login"
+  no_account_text_key: "Don't have an account?"
+  already_account_text_key: "Already have an account?"
+  signup_key: "Register"
+  username_key: "Username"
+  group_key: "Group"
+  password_key: "Password"
+  add_key: "Add"
+  confirm_password_key: "Confirm password"
+  create_account_key: "Register"
+  admin: "Administration"
+  week_name_numerator_key: "NUM"
+  week_name_denominator_key: "DENUM"
+  monday_desc: "MON"
+  tuesday_desc: "TUE"
+  wednesday_desc: "WED"
+  thursday_desc: "THU"
+  friday_desc: "FRI"
+  saturday_desc: "SAT"  
+  time_desc: "Time"
+  russian_key: "Русский"
+  index_caption_admin_desc: "Welcome back, Administrator"
+  index_text_admin_desc: " " # не придумал
+  index_caption_desc: "Welcome to BMSTU Timetable system!"
+  index_text_desc: "Please, login or register."
+  your_group_desc: "Your group is: "
+  rewrite_desc: "Rewrite group timetable?"
+  re_yes: "Yes"
+  re_no: "No"
+  timetable_not_saved_err: "TimetableError: timetable unexpectedly not saved."
+  timetable_already_exists_err: "TimetableError: Timetable already exists; no rigths for overriding. Check radiobutton."
+  user_not_found_err: "UserError: user not found or wrong password is passed."
+  user_password_not_matches_err: "UserError: passwords do not match."
+  user_exists_err: "UserError: user already exists."
+  user_trying_admin_err: "UserError: not allowed group."
+  user_not_saved_err: "UserError: user unexpectedly not saved."
+
+

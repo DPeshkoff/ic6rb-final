@@ -1,0 +1,243 @@
+<% if @error %>
+    <div class="alert alert-warning" style="top: 20px;">
+        <%= @error %>
+    </div>
+<% end %>
+
+<div style="text-align: center;">
+    <%= form_tag("/new", :method => "post") do %>
+
+        <div class="well well-sm text-center">
+            <input type="text" name="group" id="group" value="" required: true autofocus:true placeholder="<%= t :group_key %>">
+        </div>
+
+        <div class="well well-sm text-center">
+            <label for="rewrite"> <%= t :rewrite_desc %></label>
+            <% [ t(:re_yes), t(:re_no) ].each do |re| %>
+                <br><%= radio_button_tag 're', re, @re == re %>
+                <span class="glyphicon glyphicon-ok"></span>
+                <%= re.humanize %>
+            <% end %>
+        </div>
+
+
+
+        <div style="text-align: center;">
+            <table class="table table-bordered text-center table-responsive">
+                <tbody>
+                    <tr>
+                        <td class="bg-grey" rowspan="9" width="30px"><strong><%= t :monday_desc %></strong></td>
+                    </tr>
+                    <tr class="bg-grey">
+                        <td width="20%"><%= t :time_desc %></td>
+                        <td class="text-white bg-success" width="40%"><%= t :week_name_numerator_key %></td>
+                        <td class="text-white bg-info" width="40%"><%= t :week_name_denominator_key %></td>
+                    </tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">08:30 — 10:05</td>
+                        <td><input type="text" name="pn_ch_1" id="pn_ch_1" value="" placeholder=""></td><td><input type="text" name="pn_zn_1" id="pn_zn_1" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">10:15 — 11:50</td>
+                        <td><input type="text" name="pn_ch_2" id="pn_ch_2" value="" placeholder=""></td><td><input type="text" name="pn_zn_2" id="pn_zn_2" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">12:00 — 13:35</td>
+                        <td><input type="text" name="pn_ch_3" id="pn_ch_3" value="" placeholder=""></td><td><input type="text" name="pn_zn_3" id="pn_zn_3" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">13:50 — 15:25</td>
+                        <td><input type="text" name="pn_ch_4" id="pn_ch_4" value="" placeholder=""></td><td><input type="text" name="pn_zn_4" id="pn_zn_4" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">15:40 — 17:15</td>
+                        <td><input type="text" name="pn_ch_5" id="pn_ch_5" value="" placeholder=""></td><td><input type="text" name="pn_zn_5" id="pn_zn_5" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">17:25 — 19:00</td>
+                        <td><input type="text" name="pn_ch_6" id="pn_ch_6" value="" placeholder=""></td><td><input type="text" name="pn_zn_6" id="pn_zn_6" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">19:10 — 20:45</td>
+                        <td><input type="text" name="pn_ch_7" id="pn_ch_7" value="" placeholder=""></td><td><input type="text" name="pn_zn_7" id="pn_zn_7" value="" placeholder=""></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="text-align: center;">
+            <table class="table table-bordered text-center table-responsive">
+                <tbody>
+                    <tr>
+                        <td class="bg-grey" rowspan="9" width="30px"><strong><%= t :tuesday_desc %></strong></td>
+                    </tr>
+                    <tr class="bg-grey">
+                        <td width="20%"><%= t :time_desc %></td>
+                        <td class="text-white bg-success" width="40%"><%= t :week_name_numerator_key %></td>
+                        <td class="text-white bg-info" width="40%"><%= t :week_name_denominator_key %></td>
+                    </tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">08:30 — 10:05</td>
+                        <td><input type="text" name="vt_ch_1" id="vt_ch_1" value="" placeholder=""></td><td><input type="text" name="vt_zn_1" id="vt_zn_1" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">10:15 — 11:50</td>
+                        <td><input type="text" name="vt_ch_2" id="vt_ch_2" value="" placeholder=""></td><td><input type="text" name="vt_zn_2" id="vt_zn_2" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">12:00 — 13:35</td>
+                        <td><input type="text" name="vt_ch_3" id="vt_ch_3" value="" placeholder=""></td><td><input type="text" name="vt_zn_3" id="vt_zn_3" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">13:50 — 15:25</td>
+                        <td><input type="text" name="vt_ch_4" id="vt_ch_4" value="" placeholder=""></td><td><input type="text" name="vt_zn_4" id="vt_zn_4" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">15:40 — 17:15</td>
+                        <td><input type="text" name="vt_ch_5" id="vt_ch_5" value="" placeholder=""></td><td><input type="text" name="vt_zn_5" id="vt_zn_5" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">17:25 — 19:00</td>
+                        <td><input type="text" name="vt_ch_6" id="vt_ch_6" value="" placeholder=""></td><td><input type="text" name="vt_zn_6" id="vt_zn_6" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">19:10 — 20:45</td>
+                        <td><input type="text" name="vt_ch_7" id="vt_ch_7" value="" placeholder=""></td><td><input type="text" name="vt_zn_7" id="vt_zn_7" value="" placeholder=""></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="text-align: center;">
+            <table class="table table-bordered text-center table-responsive">
+                <tbody>
+                    <tr>
+                        <td class="bg-grey" rowspan="9" width="30px"><strong><%= t :wednesday_desc %></strong></td>
+                    </tr>
+                    <tr class="bg-grey">
+                        <td width="20%"><%= t :time_desc %></td>
+                        <td class="text-white bg-success" width="40%"><%= t :week_name_numerator_key %></td>
+                        <td class="text-white bg-info" width="40%"><%= t :week_name_denominator_key %></td>
+                    </tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">08:30 — 10:05</td>
+                        <td><input type="text" name="we_ch_1" id="we_ch_1" value="" placeholder=""></td><td><input type="text" name="we_zn_1" id="we_zn_1" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">10:15 — 11:50</td>
+                        <td><input type="text" name="we_ch_2" id="we_ch_2" value="" placeholder=""></td><td><input type="text" name="we_zn_2" id="we_zn_2" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">12:00 — 13:35</td>
+                        <td><input type="text" name="we_ch_3" id="we_ch_3" value="" placeholder=""></td><td><input type="text" name="we_zn_3" id="we_zn_3" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">13:50 — 15:25</td>
+                        <td><input type="text" name="we_ch_4" id="we_ch_4" value="" placeholder=""></td><td><input type="text" name="we_zn_4" id="we_zn_4" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">15:40 — 17:15</td>
+                        <td><input type="text" name="we_ch_5" id="we_ch_5" value="" placeholder=""></td><td><input type="text" name="we_zn_5" id="we_zn_5" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">17:25 — 19:00</td>
+                        <td><input type="text" name="we_ch_6" id="we_ch_6" value="" placeholder=""></td><td><input type="text" name="we_zn_6" id="we_zn_6" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">19:10 — 20:45</td>
+                        <td><input type="text" name="we_ch_7" id="we_ch_7" value="" placeholder=""></td><td><input type="text" name="we_zn_7" id="we_zn_7" value="" placeholder=""></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="text-align: center;">
+            <table class="table table-bordered text-center table-responsive">
+                <tbody>
+                    <tr>
+                        <td class="bg-grey" rowspan="9" width="30px"><strong><%= t :thursday_desc %></strong></td>
+                    </tr>
+                    <tr class="bg-grey">
+                        <td width="20%"><%= t :time_desc %></td>
+                        <td class="text-white bg-success" width="40%"><%= t :week_name_numerator_key %></td>
+                        <td class="text-white bg-info" width="40%"><%= t :week_name_denominator_key %></td>
+                    </tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">08:30 — 10:05</td>
+                        <td><input type="text" name="ch_ch_1" id="ch_ch_1" value="" placeholder=""></td><td><input type="text" name="ch_zn_1" id="ch_zn_1" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">10:15 — 11:50</td>
+                        <td><input type="text" name="ch_ch_2" id="ch_ch_2" value="" placeholder=""></td><td><input type="text" name="ch_zn_2" id="ch_zn_2" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">12:00 — 13:35</td>
+                        <td><input type="text" name="ch_ch_3" id="ch_ch_3" value="" placeholder=""></td><td><input type="text" name="ch_zn_3" id="ch_zn_3" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">13:50 — 15:25</td>
+                        <td><input type="text" name="ch_ch_4" id="ch_ch_4" value="" placeholder=""></td><td><input type="text" name="ch_zn_4" id="ch_zn_4" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">15:40 — 17:15</td>
+                        <td><input type="text" name="ch_ch_5" id="ch_ch_5" value="" placeholder=""></td><td><input type="text" name="ch_zn_5" id="ch_zn_5" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">17:25 — 19:00</td>
+                        <td><input type="text" name="ch_ch_6" id="ch_ch_6" value="" placeholder=""></td><td><input type="text" name="ch_zn_6" id="ch_zn_6" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">19:10 — 20:45</td>
+                        <td><input type="text" name="ch_ch_7" id="ch_ch_7" value="" placeholder=""></td><td><input type="text" name="ch_zn_7" id="ch_zn_7" value="" placeholder=""></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="text-align: center;">
+            <table class="table table-bordered text-center table-responsive">
+                <tbody>
+                    <tr>
+                        <td class="bg-grey" rowspan="9" width="30px"><strong><%= t :friday_desc %></strong></td>
+                    </tr>
+                    <tr class="bg-grey">
+                        <td width="20%"><%= t :time_desc %></td>
+                        <td class="text-white bg-success" width="40%"><%= t :week_name_numerator_key %></td>
+                        <td class="text-white bg-info" width="40%"><%= t :week_name_denominator_key %></td>
+                    </tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">08:30 — 10:05</td>
+                        <td><input type="text" name="pt_ch_1" id="pt_ch_1" value="" placeholder=""></td><td><input type="text" name="pt_zn_1" id="pt_zn_1" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">10:15 — 11:50</td>
+                        <td><input type="text" name="pt_ch_2" id="pt_ch_2" value="" placeholder=""></td><td><input type="text" name="pt_zn_2" id="pt_zn_2" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">12:00 — 13:35</td>
+                        <td><input type="text" name="pt_ch_3" id="pt_ch_3" value="" placeholder=""></td><td><input type="text" name="pt_zn_3" id="pt_zn_3" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">13:50 — 15:25</td>
+                        <td><input type="text" name="pt_ch_4" id="pt_ch_4" value="" placeholder=""></td><td><input type="text" name="pt_zn_4" id="pt_zn_4" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">15:40 — 17:15</td>
+                        <td><input type="text" name="pt_ch_5" id="pt_ch_5" value="" placeholder=""></td><td><input type="text" name="pt_zn_5" id="pt_zn_5" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">17:25 — 19:00</td>
+                        <td><input type="text" name="pt_ch_6" id="pt_ch_6" value="" placeholder=""></td><td><input type="text" name="pt_zn_6" id="pt_zn_6" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">19:10 — 20:45</td>
+                        <td><input type="text" name="pt_ch_7" id="pt_ch_7" value="" placeholder=""></td><td><input type="text" name="pt_zn_7" id="pt_zn_7" value="" placeholder=""></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="text-align: center;">
+            <table class="table table-bordered text-center table-responsive">
+                <tbody>
+                    <tr>
+                        <td class="bg-grey" rowspan="9" width="30px"><strong><%= t :saturday_desc %></strong></td>
+                    </tr>
+                    <tr class="bg-grey">
+                        <td width="20%"><%= t :time_desc %></td>
+                        <td class="text-white bg-success" width="40%"><%= t :week_name_numerator_key %></td>
+                        <td class="text-white bg-info" width="40%"><%= t :week_name_denominator_key %></td>
+                    </tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">08:30 — 10:05</td>
+                        <td><input type="text" name="su_ch_1" id="su_ch_1" value="" placeholder=""></td><td><input type="text" name="su_zn_1" id="su_zn_1" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">10:15 — 11:50</td>
+                        <td><input type="text" name="su_ch_2" id="su_ch_2" value="" placeholder=""></td><td><input type="text" name="su_zn_2" id="su_zn_2" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">12:00 — 13:35</td>
+                        <td><input type="text" name="su_ch_3" id="su_ch_3" value="" placeholder=""></td><td><input type="text" name="su_zn_3" id="su_zn_3" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">13:50 — 15:25</td>
+                        <td><input type="text" name="su_ch_4" id="su_ch_4" value="" placeholder=""></td><td><input type="text" name="su_zn_4" id="su_zn_4" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">15:40 — 17:15</td>
+                        <td><input type="text" name="su_ch_5" id="su_ch_5" value="" placeholder=""></td><td><input type="text" name="su_zn_5" id="su_zn_5" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">17:25 — 19:00</td>
+                        <td><input type="text" name="su_ch_6" id="su_ch_6" value="" placeholder=""></td><td><input type="text" name="su_zn_6" id="su_zn_6" value="" placeholder=""></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">19:10 — 20:45</td>
+                        <td><input type="text" name="su_ch_7" id="su_ch_7" value="" placeholder=""></td><td><input type="text" name="su_zn_7" id="su_zn_7" value="" placeholder=""></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <%= submit_tag t(:add_key), class: "btn btn-primary" %>
+    <% end %>
+</div>

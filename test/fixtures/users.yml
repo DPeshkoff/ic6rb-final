@@ -1,0 +1,12 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+
+admin:
+  username: peshkov
+  group: "Administration"
+  password: $2a$12$yjjiVS5Ize.Uzu1FsZOobOgQxcyFCJYRYsMHAkHsstkG5BKz3ubie
+
+user:
+  username: dm
+  group: "ИУ6-33Б"
+  password: 1$2a$12$yjjiVS5Ize

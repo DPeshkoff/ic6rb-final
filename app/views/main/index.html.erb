@@ -1,0 +1,275 @@
+<% if @error %>
+    <div class="alert alert-warning" style="top: 20px;">
+        <%= @error %>
+    </div>
+<% end %>
+
+<% if @current_user %>
+<%if @current_user["group"] != "Administration"%>
+<div style="text-align: center;" id="main">
+
+        <div style="text-align: center;">
+        <%= t :your_group_desc %> <%= @timetable["group"] %>
+        </div>
+
+        <div style="text-align: center;">
+            <table class="table table-bordered text-center table-responsive">
+                <tbody>
+                    <tr>
+                        <td class="bg-grey" rowspan="9" width="30px"><strong><%= t :monday_desc %></strong></td>
+                    </tr>
+                    <tr class="bg-grey">
+                        <td width="20%"><%= t :time_desc %></td>
+                        <td class="text-white bg-success" width="40%"><%= t :week_name_numerator_key %></td>
+                        <td class="text-white bg-info" width="40%"><%= t :week_name_denominator_key %></td>
+                    </tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">08:30 — 10:05</td>
+                        <td class="text-success" id="pn_ch_1"><%= @timetable["monday"][0] %></td><td class="text-info" id="pn_zn_1"><%= @timetable["monday"][7] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">10:15 — 11:50</td>
+                        <td class="text-success" id="pn_ch_2"><%= @timetable["monday"][1] %></td><td class="text-info" id="pn_zn_2"><%= @timetable["monday"][8] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">12:00 — 13:35</td>
+                        <td class="text-success" id="pn_ch_3"><%= @timetable["monday"][2] %></td><td class="text-info" id="pn_zn_3"><%= @timetable["monday"][9] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">13:50 — 15:25</td>
+                        <td class="text-success" id="pn_ch_4"><%= @timetable["monday"][3] %></td><td class="text-info" id="pn_zn_4"><%= @timetable["monday"][10] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">15:40 — 17:15</td>
+                        <td class="text-success" id="pn_ch_5"><%= @timetable["monday"][4] %></td><td class="text-info" id="pn_zn_5"><%= @timetable["monday"][11] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">17:25 — 19:00</td>
+                        <td class="text-success" id="pn_ch_6"><%= @timetable["monday"][5] %></td><td class="text-info" id="pn_zn_6"><%= @timetable["monday"][12] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">19:10 — 20:45</td>
+                        <td class="text-success" id="pn_ch_7"><%= @timetable["monday"][6] %></td><td class="text-info" id="pn_zn_7"><%= @timetable["monday"][13] %></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div style="text-align: center;">
+            <table class="table table-bordered text-center table-responsive">
+                <tbody>
+                    <tr>
+                        <td class="bg-grey" rowspan="9" width="30px"><strong><%= t :tuesday_desc %></strong></td>
+                    </tr>
+                    <tr class="bg-grey">
+                        <td width="20%"><%= t :time_desc %></td>
+                        <td class="text-white bg-success" width="40%"><%= t :week_name_numerator_key %></td>
+                        <td class="text-white bg-info" width="40%"><%= t :week_name_denominator_key %></td>
+                    </tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">08:30 — 10:05</td>
+                        <td class="text-success" id="pn_ch_1"><%= @timetable["tuesday"][0] %></td><td class="text-info" id="pn_zn_1"><%= @timetable["tuesday"][7] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">10:15 — 11:50</td>
+                        <td class="text-success" id="pn_ch_2"><%= @timetable["tuesday"][1] %></td><td class="text-info" id="pn_zn_2"><%= @timetable["tuesday"][8] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">12:00 — 13:35</td>
+                        <td class="text-success" id="pn_ch_3"><%= @timetable["tuesday"][2] %></td><td class="text-info" id="pn_zn_3"><%= @timetable["tuesday"][9] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">13:50 — 15:25</td>
+                        <td class="text-success" id="pn_ch_4"><%= @timetable["tuesday"][3] %></td><td class="text-info" id="pn_zn_4"><%= @timetable["tuesday"][10] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">15:40 — 17:15</td>
+                        <td class="text-success" id="pn_ch_5"><%= @timetable["tuesday"][4] %></td><td class="text-info" id="pn_zn_5"><%= @timetable["tuesday"][11] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">17:25 — 19:00</td>
+                        <td class="text-success" id="pn_ch_6"><%= @timetable["tuesday"][5] %></td><td class="text-info" id="pn_zn_6"><%= @timetable["tuesday"][12] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">19:10 — 20:45</td>
+                        <td class="text-success" id="pn_ch_7"><%= @timetable["tuesday"][6] %></td><td class="text-info" id="pn_zn_7"><%= @timetable["tuesday"][13] %></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="text-align: center;">
+            <table class="table table-bordered text-center table-responsive">
+                <tbody>
+                    <tr>
+                        <td class="bg-grey" rowspan="9" width="30px"><strong><%= t :wednesday_desc %></strong></td>
+                    </tr>
+                    <tr class="bg-grey">
+                        <td width="20%"><%= t :time_desc %></td>
+                        <td class="text-white bg-success" width="40%"><%= t :week_name_numerator_key %></td>
+                        <td class="text-white bg-info" width="40%"><%= t :week_name_denominator_key %></td>
+                    </tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">08:30 — 10:05</td>
+                        <td class="text-success" id="pn_ch_1"><%= @timetable["wednesday"][0] %></td><td class="text-info" id="pn_zn_1"><%= @timetable["wednesday"][7] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">10:15 — 11:50</td>
+                        <td class="text-success" id="pn_ch_2"><%= @timetable["wednesday"][1] %></td><td class="text-info" id="pn_zn_2"><%= @timetable["wednesday"][8] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">12:00 — 13:35</td>
+                        <td class="text-success" id="pn_ch_3"><%= @timetable["wednesday"][2] %></td><td class="text-info" id="pn_zn_3"><%= @timetable["wednesday"][9] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">13:50 — 15:25</td>
+                        <td class="text-success" id="pn_ch_4"><%= @timetable["wednesday"][3] %></td><td class="text-info" id="pn_zn_4"><%= @timetable["wednesday"][10] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">15:40 — 17:15</td>
+                        <td class="text-success" id="pn_ch_5"><%= @timetable["wednesday"][4] %></td><td class="text-info" id="pn_zn_5"><%= @timetable["wednesday"][11] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">17:25 — 19:00</td>
+                        <td class="text-success" id="pn_ch_6"><%= @timetable["wednesday"][5] %></td><td class="text-info" id="pn_zn_6"><%= @timetable["wednesday"][12] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">19:10 — 20:45</td>
+                        <td class="text-success" id="pn_ch_7"><%= @timetable["wednesday"][6] %></td><td class="text-info" id="pn_zn_7"><%= @timetable["wednesday"][13] %></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="text-align: center;">
+            <table class="table table-bordered text-center table-responsive">
+                <tbody>
+                    <tr>
+                        <td class="bg-grey" rowspan="9" width="30px"><strong><%= t :thursday_desc %></strong></td>
+                    </tr>
+                    <tr class="bg-grey">
+                        <td width="20%"><%= t :time_desc %></td>
+                        <td class="text-white bg-success" width="40%"><%= t :week_name_numerator_key %></td>
+                        <td class="text-white bg-info" width="40%"><%= t :week_name_denominator_key %></td>
+                    </tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">08:30 — 10:05</td>
+                        <td class="text-success" id="pn_ch_1"><%= @timetable["thursday"][0] %></td><td class="text-info" id="pn_zn_1"><%= @timetable["thursday"][7] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">10:15 — 11:50</td>
+                        <td class="text-success" id="pn_ch_2"><%= @timetable["thursday"][1] %></td><td class="text-info" id="pn_zn_2"><%= @timetable["thursday"][8] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">12:00 — 13:35</td>
+                        <td class="text-success" id="pn_ch_3"><%= @timetable["thursday"][2] %></td><td class="text-info" id="pn_zn_3"><%= @timetable["thursday"][9] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">13:50 — 15:25</td>
+                        <td class="text-success" id="pn_ch_4"><%= @timetable["thursday"][3] %></td><td class="text-info" id="pn_zn_4"><%= @timetable["thursday"][10] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">15:40 — 17:15</td>
+                        <td class="text-success" id="pn_ch_5"><%= @timetable["thursday"][4] %></td><td class="text-info" id="pn_zn_5"><%= @timetable["thursday"][11] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">17:25 — 19:00</td>
+                        <td class="text-success" id="pn_ch_6"><%= @timetable["thursday"][5] %></td><td class="text-info" id="pn_zn_6"><%= @timetable["thursday"][12] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">19:10 — 20:45</td>
+                        <td class="text-success" id="pn_ch_7"><%= @timetable["thursday"][6] %></td><td class="text-info" id="pn_zn_7"><%= @timetable["thursday"][13] %></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="text-align: center;">
+            <table class="table table-bordered text-center table-responsive">
+                <tbody>
+                    <tr>
+                        <td class="bg-grey" rowspan="9" width="30px"><strong><%= t :friday_desc %></strong></td>
+                    </tr>
+                    <tr class="bg-grey">
+                        <td width="20%"><%= t :time_desc %></td>
+                        <td class="text-white bg-success" width="40%"><%= t :week_name_numerator_key %></td>
+                        <td class="text-white bg-info" width="40%"><%= t :week_name_denominator_key %></td>
+                    </tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">08:30 — 10:05</td>
+                        <td class="text-success" id="pn_ch_1"><%= @timetable["friday"][0] %></td><td class="text-info" id="pn_zn_1"><%= @timetable["friday"][7] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">10:15 — 11:50</td>
+                        <td class="text-success" id="pn_ch_2"><%= @timetable["friday"][1] %></td><td class="text-info" id="pn_zn_2"><%= @timetable["friday"][8] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">12:00 — 13:35</td>
+                        <td class="text-success" id="pn_ch_3"><%= @timetable["friday"][2] %></td><td class="text-info" id="pn_zn_3"><%= @timetable["friday"][9] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">13:50 — 15:25</td>
+                        <td class="text-success" id="pn_ch_4"><%= @timetable["friday"][3] %></td><td class="text-info" id="pn_zn_4"><%= @timetable["friday"][10] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">15:40 — 17:15</td>
+                        <td class="text-success" id="pn_ch_5"><%= @timetable["friday"][4] %></td><td class="text-info" id="pn_zn_5"><%= @timetable["friday"][11] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">17:25 — 19:00</td>
+                        <td class="text-success" id="pn_ch_6"><%= @timetable["friday"][5] %></td><td class="text-info" id="pn_zn_6"><%= @timetable["friday"][12] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">19:10 — 20:45</td>
+                        <td class="text-success" id="pn_ch_7"><%= @timetable["friday"][6] %></td><td class="text-info" id="pn_zn_7"><%= @timetable["friday"][13] %></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="text-align: center;">
+            <table class="table table-bordered text-center table-responsive">
+                <tbody>
+                    <tr>
+                        <td class="bg-grey" rowspan="9" width="30px"><strong><%= t :saturday_desc %></strong></td>
+                    </tr>
+                    <tr class="bg-grey">
+                        <td width="20%"><%= t :time_desc %></td>
+                        <td class="text-white bg-success" width="40%"><%= t :week_name_numerator_key %></td>
+                        <td class="text-white bg-info" width="40%"><%= t :week_name_denominator_key %></td>
+                    </tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">08:30 — 10:05</td>
+                        <td class="text-success" id="pn_ch_1"><%= @timetable["saturday"][0] %></td><td class="text-info" id="pn_zn_1"><%= @timetable["saturday"][7] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">10:15 — 11:50</td>
+                        <td class="text-success" id="pn_ch_2"><%= @timetable["saturday"][1] %></td><td class="text-info" id="pn_zn_2"><%= @timetable["saturday"][8] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">12:00 — 13:35</td>
+                        <td class="text-success" id="pn_ch_3"><%= @timetable["saturday"][2] %></td><td class="text-info" id="pn_zn_3"><%= @timetable["saturday"][9] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">13:50 — 15:25</td>
+                        <td class="text-success" id="pn_ch_4"><%= @timetable["saturday"][3] %></td><td class="text-info" id="pn_zn_4"><%= @timetable["saturday"][10] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">15:40 — 17:15</td>
+                        <td class="text-success" id="pn_ch_5"><%= @timetable["saturday"][4] %></td><td class="text-info" id="pn_zn_5"><%= @timetable["saturday"][11] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">17:25 — 19:00</td>
+                        <td class="text-success" id="pn_ch_6"><%= @timetable["saturday"][5] %></td><td class="text-info" id="pn_zn_6"><%= @timetable["saturday"][12] %></td></tr>
+                    <tr>
+                        <td class="bg-grey text-nowrap">19:10 — 20:45</td>
+                        <td class="text-success" id="pn_ch_7"><%= @timetable["saturday"][6] %></td><td class="text-info" id="pn_zn_7"><%= @timetable["saturday"][13] %></td></tr>
+                    </tbody>
+                </table>
+            </div>
+</div>
+
+<% else %>
+<section id="banner" class="banner">
+    <div class="bg-color">
+      <div class="container">
+        <div class="row">
+          <div class="banner-info">
+            <div class="banner-text text-center">
+              <h1 class="white"><%= t :index_caption_admin_desc %></h1>
+              <p><%= t :index_text_admin_desc %></p>
+            </div>
+            <div class="overlay-detail text-center">
+              <a href="#service"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<% end %>
+
+
+<% else %>
+<section id="banner" class="banner">
+    <div class="bg-color">
+      <div class="container">
+        <div class="row">
+          <div class="banner-info">
+            <div class="banner-text text-center">
+              <h1 class="white"><%= t :index_caption_desc %></h1>
+              <p><%= t :index_text_desc %></p>
+            </div>
+            <div class="overlay-detail text-center">
+              <a href="#service"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<% end %>

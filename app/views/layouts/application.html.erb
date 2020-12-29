@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> <%= t :title_key %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <!-- Bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style type="text/css">
+      #banner {
+        background: url(<%= image_tag 'banner.png', id: 'banner'%>) no-repeat fixed;
+        background-size: cover;
+        min-height: 650px;
+        position: relative;
+      }
+    </style>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/"><%= image_tag 'logo.png', id: 'logo', style: 'width: 63px; height: 40px' %></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">
+          <i class="fa fa-home"></i>
+          <%= t :home_page_key %>
+          <span class="sr-only">(current)</span>
+          </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+    <% if @current_user %>
+    <% if @current_user["group"] == "Administration" %>
+      <li class="nav-item">
+        <a class="nav-link" href="/add">
+          <i class="fa fa-envelope-o">
+            <span class="badge badge-danger">T</span>
+          </i>
+          <%= t :add_timetable_key %>
+        </a>
+      </li>
+    <% end %>
+    <% end %>
+    </ul> 
+    <ul class="navbar-nav " id='user-info'>
+
+    <% if I18n.locale == :en %>
+    <li class="nav-item">
+    <a class="nav-link" href="/set_locale?locale=ru">
+      <i class="fa fa-globe">
+        <span class="badge badge-primary">Y</span>
+      </i>
+      <%= t :russian_key %>
+      </a>
+    </li>
+    <% end %>
+    <% if I18n.locale == :ru %>
+    <li class="nav-item">
+    <a class="nav-link" href="/set_locale?locale=en">
+      <i class="fa fa-globe">
+        <span class="badge badge-primary">Y</span>
+      </i>
+      <%= t :english_key %>
+      </a>
+    </li>
+    <% end %>
+
+  <% unless @current_user %>
+    <li class="nav-item">
+      <a class="nav-link" href="/login">
+        <i class="fa fa-globe">
+          <span class="badge badge-success">L</span>
+        </i>
+        <%= t :login_key %>
+      </a>
+    </li>
+  <% else %>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">
+    <i class="fa fa-globe">
+      <span class="badge badge-light"><%= t :logged_as_text_key %> <%= @current_user["username"] %></span>
+    </i>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">
+    <i class="fa fa-globe">
+      <span class="badge badge-info"><%= @current_user["group"] %></span>
+    </i>
+    </a>
+  </li>
+  <li class="nav-item">
+      <a class="nav-link" href="/logout">
+        <i class="fa fa-globe">
+          <span class="badge badge-success">L</span>
+        </i>
+        <%= t :logout_key %>
+      </a>
+  </li>
+<% end %>
+  
+</ul>
+</div>
+</nav>
+  <%= yield %>
+</body>
+</html>
